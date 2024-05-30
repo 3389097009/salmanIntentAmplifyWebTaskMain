@@ -1,5 +1,7 @@
 import React from "react";
 import BlogCard from "./BlogCard";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import Img1 from "../../assets/blog/blog1.png";
 import Img2 from "../../assets/blog/blog2.png";
 import Img3 from "../../assets/blog/blog3.png";
@@ -37,6 +39,7 @@ const BlogsData = [
 const BlogsComp = () => {
   return (
     <>
+      <Navbar />
       <div className="bg-gray-100 dark:bg-gray-900 dark:text-white py-10 pb-14">
         <section data-aos="fade-up" className="container ">
           <h1 className="my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-semibold">
@@ -52,6 +55,7 @@ const BlogsComp = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

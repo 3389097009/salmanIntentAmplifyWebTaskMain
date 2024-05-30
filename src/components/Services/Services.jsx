@@ -55,7 +55,7 @@ const Services = () => {
               data-aos="fade-up"
               className="text-gray-600 dark:text-gray-400 text-sm"
             >
-              We are self-service data analytics software that lets you create
+              We are digital marketing and web designing company that lets you create
               visually.
             </p>
           </div>

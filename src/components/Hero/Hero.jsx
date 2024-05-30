@@ -31,8 +31,8 @@ const Hero = () => {
               className="text-4xl sm:text-5xl font-semibold"
               style={{ lineHeight: 1.2 }}
             >
-              Building Brands in the{" "}
-              <span className="text-primary">Digital Agency</span>
+              Building Brands with{" "}
+              <span className="text-primary">Intent Creations</span>
             </h1>
             <p data-aos="fade-up" data-aos-delay="300">
               Your partner in navigating the ever-evolving landscape of digital

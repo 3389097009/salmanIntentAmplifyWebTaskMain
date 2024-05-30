@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const FooterLinks = [
   {
@@ -21,8 +22,8 @@ const FooterLinks = [
 ];
 const HelpLinks = [
   {
-    title: "Customer Support",
-    link: "/#support",
+    title: "Get In Touch",
+    link: "/ContactUs",
   },
   {
     title: "Delivery Details",
@@ -47,60 +48,63 @@ const ResourcesLinks = [
     link: "/#blogs",
   },
   {
-    title: "Subscribe TCJ",
+    title: "FAQs",
     link: "https://www.youtube.com/channel/UC1H-a1MKEFXRiFlGNLcy7gQ?sub_confirmation=1",
   },
 ];
+
 const Footer = () => {
   return (
     <div className="bg-dark text-white">
       <section className="container py-10">
-        <div className=" grid md:grid-cols-3 py-5">
-          {/* company Details */}
-          <div className=" py-8 px-4 ">
+        <div className="grid md:grid-cols-3 py-5">
+          {/* Company Details */}
+          <div className="py-8 px-4">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
-              Digital Agency
+              Intent Creations
             </h1>
             <p className="text-sm">
-              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit consectetur adipisicing elit ipsum
-              dolor sit amet consectetur. adipisicing{" "}
+              Your partner in navigating the ever-evolving landscape of digital marketing.
+              From conceptualization to execution, we craft tailored solutions
+              that drive results and elevate your brand to new heights.
             </p>
             <br />
             {/* Social Handle */}
             <div className="flex items-center gap-4 mt-6">
-              <a href="#">
+              <Link to="#">
                 <FaInstagram className="text-2xl hover:text-primary duration-300" />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <FaFacebook className="text-2xl hover:text-primary duration-300" />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <FaLinkedin className="text-2xl hover:text-primary duration-300" />
-              </a>
+              </Link>
             </div>
           </div>
           {/* Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10 ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10">
             <div className="">
-              <div className="py-8 px-4 ">
+              <div className="py-8 px-4">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
                   Company
                 </h1>
-                <ul className={`flex flex-col gap-3`}>
+                <ul className="flex flex-col gap-3">
                   {FooterLinks.map((link) => (
                     <li
                       key={link.title}
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-400 "
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-400"
                     >
-                      <span>{link.title}</span>
+                      <Link to={link.link}>
+                        <span>{link.title}</span>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
             <div className="">
-              <div className="py-8 px-4 ">
+              <div className="py-8 px-4">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
                   Help
                 </h1>
@@ -108,16 +112,18 @@ const Footer = () => {
                   {HelpLinks.map((link) => (
                     <li
                       key={link.title}
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-400 "
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-400"
                     >
-                      <span>{link.title}</span>
+                      <Link to={link.link}>
+                        <span>{link.title}</span>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
             <div className="">
-              <div className="py-8 px-4 ">
+              <div className="py-8 px-4">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
                   Resources
                 </h1>
@@ -125,9 +131,17 @@ const Footer = () => {
                   {ResourcesLinks.map((link) => (
                     <li
                       key={link.title}
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-400 "
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-400"
                     >
-                      <span>{link.title}</span>
+                      {link.link.startsWith("http") ? (
+                        <a href={link.link} target="_blank" rel="noopener noreferrer">
+                          <span>{link.title}</span>
+                        </a>
+                      ) : (
+                        <Link to={link.link}>
+                          <span>{link.title}</span>
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
